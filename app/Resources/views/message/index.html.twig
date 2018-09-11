@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="page-header">Messages</h2>
+	<table class="table table-dark">
+	  <thead>
+	    <tr>
+	      <th scope="col">Message</th>
+	      <th scope="col">Date Sent</th>
+	      <th scope="col">Phone Number</th>
+	      <th scope="col">Status</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	{% for message in messages %}
+	    <tr>
+	      <td>{{message.description}}</td>
+	      <td>{{message.sentDate|date('F j, Y, g:i a')}}</td>
+	      <td>{{message.phoneNum}}</td>
+	      <td>{{message.status}}</td>
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+	</table>
+{% endblock %}
